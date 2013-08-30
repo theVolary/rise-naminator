@@ -1,0 +1,12 @@
+{
+  "name": "rise-naminator",
+  "version": "0.1.0",
+  "description": "A module that generates random adjective/noun based names from a dictionary.",
+  "author": "Steve Krenek <steve@thevolary.com>",
+  "readmeFilename": "README.md",
+  "repository": { "type": "git", "url": "git://github.com/theVolary/rise-naminator.git" },
+  "main": "index.js",
+  "dependencies": {
+    "underscore": "1.5.x"
+  }
+}
