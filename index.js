@@ -15,16 +15,21 @@ var misspell = function(string, literacy) {
 };
 
 exports.naminator = {
+  getDefaultDictionary: function(cb) {
+    cb && cb(require('./animals-dictionary.json'));
+  },
+
   generate: function(options, cb) {
     options = options || {};
     if (typeof options === "function") {
       cb = options;
       options = {};
     }
-    var dict = options.dictionary || require('./animals-dictionary.json');
-    var username = options.prefix ? options.prefix : "";
-    var parts = [];
-
+    var defaultDictionary = require('./animals-dictionary.json'),
+        dict = options.dictionary || defaultDictionary,
+        username = options.prefix ? options.prefix : "",
+        parts = [];
+        
     if (dict.adjectives) {
       parts.push(dict.adjectives[Math.floor(Math.random() * dict.adjectives.length)]);
     }
